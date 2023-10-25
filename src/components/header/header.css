@@ -191,7 +191,7 @@
   .navbar {
     position: fixed;
     top: 0;
-    right: -320px;
+    right: -500px;
     background-color: var(--primary-color);
     width: 320px;
     height: 100vh;
