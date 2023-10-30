@@ -1,6 +1,7 @@
 import "./slider.css";
 import Rating from "../rating/Rating";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Slider = ({ products }) => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -26,7 +27,11 @@ const Slider = ({ products }) => {
         className="slider-wrapper"
       >
         {products.map((product) => (
-          <div className="slide" key={product.id}>
+          <Link
+            to={`/products/${product.id}`}
+            className="slide"
+            key={product.id}
+          >
             <img
               src={product.image}
               alt={product.title}
@@ -35,7 +40,7 @@ const Slider = ({ products }) => {
             <h3 className="slide-title">{product.title}</h3>
             <Rating rating={product.rating} reviews={product.reviews} />
             <div className="slide-price">${product.price}</div>
-          </div>
+          </Link>
         ))}
       </div>
       <button

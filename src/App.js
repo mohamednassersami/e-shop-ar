@@ -1,29 +1,25 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
-import HeaderBanner from "./components/header-banner/HeaderBanner";
-import Category from "./components/category/Category";
-import SpecialOffers from "./components/special-offers/SpecialOffers";
-import HeadingTitle from "./components/heading-title/HeadingTitle";
-import Slider from "./components/slider/Slider";
-import Brands from "./components/brands/Brands";
-import { products } from "./data/products";
+import Home from "./pages/home/Home";
+import Cart from "./pages/cart/Cart";
+import Products from "./pages/products/Products";
+import SingleProduct from "./pages/single-product/SingleProduct";
+import SpecialOffersPage from "./pages/special-offers-page/SpecialOffersPage";
+
 import Footer from "./components/footer/Footer";
 
 function App() {
-  const laptops = products.filter((product) => product.isLaptop === true);
-  const mobiles = products.filter((product) => product.isLaptop === false);
   return (
     <BrowserRouter>
       <Header />
-      <HeaderBanner />
-      <Category />
-      <SpecialOffers />
-      <HeadingTitle title="الجديد من اللابتوبات" />
-      <Slider products={laptops} />
-      <HeadingTitle title="الجديد من الموبايلات" />
-      <Slider products={mobiles} />
-      <HeadingTitle title="تسوق حسب المارك" />
-      <Brands />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/special-offers/:id" element={<SpecialOffersPage />} />
+      </Routes>
+
       <Footer />
     </BrowserRouter>
   );
