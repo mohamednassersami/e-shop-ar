@@ -6,6 +6,7 @@ const ProductSidebar = ({
   setFilterItem,
   sortItem,
   setSortItem,
+  setCurrentPage,
 }) => {
   return (
     <div className="product-sidebar">
@@ -18,6 +19,7 @@ const ProductSidebar = ({
         <ProductFilterBox
           filterItem={filterItem}
           setFilterItem={setFilterItem}
+          setCurrentPage={setCurrentPage}
         />
       </div>
     </div>

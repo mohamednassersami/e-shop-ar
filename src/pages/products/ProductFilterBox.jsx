@@ -1,10 +1,13 @@
-const ProductFilterBox = ({ filterItem, setFilterItem }) => {
+const ProductFilterBox = ({ filterItem, setFilterItem, setCurrentPage }) => {
   return (
     <div className="product-filter">
       <div className="form-group">
         <input
           value={filterItem}
-          onChange={(e) => setFilterItem(e.target.id)}
+          onChange={(e) => {
+            setFilterItem(e.target.id);
+            setCurrentPage(1);
+          }}
           type="radio"
           name="filter"
           id="all"
@@ -14,7 +17,10 @@ const ProductFilterBox = ({ filterItem, setFilterItem }) => {
       <div className="form-group">
         <input
           value={filterItem}
-          onChange={(e) => setFilterItem(e.target.id)}
+          onChange={(e) => {
+            setFilterItem(e.target.id);
+            setCurrentPage(1);
+          }}
           type="radio"
           name="filter"
           id="laptop"
@@ -24,7 +30,10 @@ const ProductFilterBox = ({ filterItem, setFilterItem }) => {
       <div className="form-group">
         <input
           value={filterItem}
-          onChange={(e) => setFilterItem(e.target.id)}
+          onChange={(e) => {
+            setFilterItem(e.target.id);
+            setCurrentPage(1);
+          }}
           type="radio"
           name="filter"
           id="mobile"
