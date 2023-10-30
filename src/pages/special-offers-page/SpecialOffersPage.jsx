@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { specialOffers } from "../../data/special-offers";
 import "./special-offers-page.css";
@@ -18,6 +18,10 @@ const SpecialOffersPage = () => {
   const { images, title, rating, reviews, price, discount } = product;
 
   const calculateDiscount = price - (discount * price) / 100;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Add To Cart Handler
   const addToCartHandler = () => {
